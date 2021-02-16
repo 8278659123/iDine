@@ -19,6 +19,7 @@
 		CA984F0225DB5470003A8940 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA984F0125DB5470003A8940 /* ItemRow.swift */; };
 		CA984F0425DB577B003A8940 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA984F0325DB577B003A8940 /* MainView.swift */; };
 		CA984F0625DB5791003A8940 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA984F0525DB5791003A8940 /* OrderView.swift */; };
+		CA984F0A25DB5D85003A8940 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA984F0925DB5D85003A8940 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CA984F0125DB5470003A8940 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		CA984F0325DB577B003A8940 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CA984F0525DB5791003A8940 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		CA984F0925DB5D85003A8940 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				CA984F0125DB5470003A8940 /* ItemRow.swift */,
 				CA984F0325DB577B003A8940 /* MainView.swift */,
 				CA984F0525DB5791003A8940 /* OrderView.swift */,
+				CA984F0925DB5D85003A8940 /* CheckoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				CA984EF525DB5366003A8940 /* JSON_Parser.swift in Sources */,
 				CA984F0425DB577B003A8940 /* MainView.swift in Sources */,
+				CA984F0A25DB5D85003A8940 /* CheckoutView.swift in Sources */,
 				CA984F0025DB545D003A8940 /* ItemDetail.swift in Sources */,
 				CA984EE725DB52DF003A8940 /* ContentView.swift in Sources */,
 				CA984F0225DB5470003A8940 /* ItemRow.swift in Sources */,

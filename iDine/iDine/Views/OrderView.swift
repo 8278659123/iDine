@@ -35,26 +35,42 @@ struct OrderView: View {
                         }
                         
                     }
+                    //Need to research this method and also the edith button
+                    .onDelete(perform: deleteItems)
                     
                 }
                 
                 Section {
                     
                     //This will take the user to another view to "Check Out"
-                    NavigationLink(destination: Text("Check Out")) {
+                    NavigationLink(destination: CheckoutView()) {
                         
                         Text("Place Order")
                         
                     }
                     
                 }
+                //If there are not items in the items array then do not show this view
+                .disabled(order.items.isEmpty == true)
                 
             }
             .navigationTitle("Order")
             //This list style will show each item as its on white row
             .listStyle(InsetGroupedListStyle())
+            .toolbar {
+                
+                //SwiftUI already knows that an edit button should toggle the table between editing and non-editing mode, while also changing title between Edit and Done
+                EditButton()
+                
+            }
             
         }
+        
+    }
+    
+    func deleteItems(at offsets: IndexSet) {
+        
+        order.items.remove(atOffsets: offsets)
         
     }
     

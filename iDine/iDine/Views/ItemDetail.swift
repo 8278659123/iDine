@@ -40,6 +40,10 @@ struct ItemDetail: View {
             Text(item.description)
                 .padding()
             
+            //Here we have a button that when tapped will run the add() method and we will pass the current item in this detail view we selected from the rows in ContentView()
+            Button(action: { order.add(item: item) }) { Text("Order This") }
+                .font(.headline)
+            
             Spacer()
             
         }
@@ -58,6 +62,7 @@ struct ItemDetail_Previews: PreviewProvider {
         NavigationView {
             
             ItemDetail(item: MenuItem.example)
+                .environmentObject(Order())
             
         }
         
