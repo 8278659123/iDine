@@ -21,7 +21,7 @@ struct MenuSelection: Codable, Identifiable {
     
 }
 
-struct MenuItem: Codable, Equatable, Identifiable {
+struct MenuItem: Codable, Equatable, Identifiable, Hashable {
     
     //Unique identifiable to seperate each of the MenuItems
     var id: UUID
@@ -56,7 +56,7 @@ struct MenuItem: Codable, Equatable, Identifiable {
         
     }
     
-    //Do not what #if Debug #endif do
+    //This Menu Item will only be available for debugging purposes
     #if DEBUG
     static let example = MenuItem(id: UUID(), name: "Maple French Toast", photoCredit: "Joseph Gonzalez", price: 6, restrictions: ["G","V"], description: "Sweet, fluffy, and served piping hot, our French toast is flown in fresh every day from Maple City, Canada, which is where all maple syrup in the world comes from. And if you believe that, we have some land to sell you…")
     #endif

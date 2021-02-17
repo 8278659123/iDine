@@ -60,15 +60,15 @@ class Order: ObservableObject {
         
     }
     
-    //This method first finds the index of a specifed item on the items array using firstIndex(of: index) and then in the statement it uses the remove(at: index) to pass the index of the item found and removes it from the array and then returns the array again with the item removed.
-    func remove(item: MenuItem) {
-        
-        if let index = items.firstIndex(of: item) {
-            
-            items.remove(at: index)
-            
-        }
-        
-    }
+//    //This method first finds the index of a specifed item on the items array using firstIndex(of: index) and then in the statement it uses the remove(at: index) to pass the index of the item found and removes it from the array and then returns the array again with the item removed.
+//    func remove(item: MenuItem) {
+//
+//        if let index = items.firstIndex(of: item) {
+//
+//            items.remove(at: index)
+//
+//        }
+//
+//    }
     
 }

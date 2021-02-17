@@ -15,6 +15,8 @@ struct CheckoutView: View {
     //Various tip amount we can select from
     let tipAmounts = [10,15,20,25,0]
     
+    let pickuptimes = ["Now","Tonight","Tomorrow Morning"]
+    
     //@Stae variable to update our view dependin on what type of payment we choose from the picker. By default it's set to cash.
     @State private var paymentType = "Apple Pay"
     
@@ -26,6 +28,8 @@ struct CheckoutView: View {
     
     //Lets the user add the loyalty number which my default is empty
     @State private var loyaltyNumber = ""
+    
+    @State private var pickupTime = "Now"
     
     //Keeps track of when to show the alerm
     @State private var showingPaymentAlert = false
@@ -72,6 +76,7 @@ struct CheckoutView: View {
                 }
                 
             }
+            
             //Some cool pickers are WheelPickerStyle, MenuPickerStyle, SegmentedPickerStyle
             //.pickerStyle(MenuPickerStyle())
             
@@ -103,6 +108,20 @@ struct CheckoutView: View {
                 
             }
             
+            Section(header: Text("Pick up time")) {
+                
+                Picker("Pickup time", selection: $pickupTime) {
+                    
+                    ForEach(pickuptimes, id: \.self) { pickupTime in
+                        
+                        Text(pickupTime)
+                        
+                    }
+                    
+                }
+                
+            }
+            
             Section(header: Text("TOTAL: \(totalPrice)").font(.title)) {
                 
                 Button(action: {
@@ -117,15 +136,13 @@ struct CheckoutView: View {
                 }
                 
             }
-            
-            
-            
+ 
         }
         .navigationTitle("Payment")
         .navigationBarTitleDisplayMode(.inline)
         .alert(isPresented: $showingPaymentAlert) {
             
-            Alert(title: Text("Order confirmed"), message: Text("Your total was \(totalPrice) - thank you!"), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Order confirmed"), message: Text("Your total was \(totalPrice) - Thank You!\nPickup Time: \(pickupTime)"), dismissButton: .default(Text("OK")))
             
         }
         

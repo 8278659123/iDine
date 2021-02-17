@@ -14,6 +14,8 @@ struct ItemRow: View {
     
     let colors: [String:Color] = ["D":.purple,"G":.black,"N":.red,"S":.blue,"V":.green]
     
+    @EnvironmentObject var favorite: Favorites
+    
     var body: some View {
         
         NavigationLink(destination: ItemDetail(item: item)) {
@@ -34,8 +36,21 @@ struct ItemRow: View {
                 VStack(alignment: .leading) {
                     
                     //Name of MenuItem
-                    Text(item.name)
-                        .font(.headline)
+                    HStack {
+                        
+                        Text(item.name)
+                            .font(.headline)
+                        
+                        //If the current item in view is on the favorites array then it will show the "star.fill"
+                        if favorite.favorites.contains(item) {
+                            
+                            Image(systemName: "star.fill")
+                                .foregroundColor(.blue)
+                                .font(.subheadline)
+                            
+                        }
+                        
+                    }
                     
                     //Price of MenuItem
                     Text("$\(item.price)")
@@ -78,6 +93,7 @@ struct ItemRow_Previews: PreviewProvider {
         ItemRow(item: MenuItem.example)
             .previewLayout(.sizeThatFits)
             .padding()
+            .environmentObject(Favorites())
         
     }
     

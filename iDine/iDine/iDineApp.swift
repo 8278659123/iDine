@@ -14,6 +14,8 @@ struct iDineApp: App {
     //This is an instance of the Order() class.
     @StateObject var order = Order()
     
+    @StateObject var favorites = Favorites()
+    
     var body: some Scene {
         
         WindowGroup {
@@ -21,6 +23,7 @@ struct iDineApp: App {
             MainView()
                 //We place the instance of the order property in an enviromentObject because this environmentObject can be read by any child or subView by using EnvironmentObject wrapper. EnvironmentObjects in swiftUI share data accros many places, but by themselfs they do not do much because they have no way of updating the values if they change (so we could have differnt values for different views). That is why we have to use the EnvironmentObject with the ObservableObject because the ObservableObject actually keeps track of changes and then publishes them which is when the @StateObject gets them and sends it to the EnvironmenObject.
                 .environmentObject(order)
+                .environmentObject(favorites)
             
         }
         
